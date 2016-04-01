@@ -3,13 +3,13 @@ from django.utils import timezone
 
 class Producto(models.Model):
     Nombre = models.CharField(max_length=200)
-    created_date = models.DateTimeField(
+    Creado = models.DateTimeField(
             default=timezone.now)
-    published_date = models.DateTimeField(
+    Fecha_de_Compra = models.DateTimeField(
             blank=True, null=True)
 
     def publish(self):
-        self.published_date = timezone.now()
+        self.Fecha_de_Compra = timezone.now()
         self.save()
 
     def __str__(self):
